@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'http://localhost:3001/api';
+export const API_BASE_URL = 'https://future-back.vercel.app/api';
 
 export const AUTH_ENDPOINTS = {
   SIGN_UP: `${API_BASE_URL}/auth/sign-up`,
