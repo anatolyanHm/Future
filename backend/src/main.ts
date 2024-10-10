@@ -11,18 +11,7 @@ async function bootstrap() {
   const port = configService.get<number>('PORT') || 3002;
 
   app.setGlobalPrefix('/api');
-  app.enableCors({
-    origin: (origin, callback) => {
-      const allowedOrigins = ['future-eta.vercel.app'];
-      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    credentials: true,
-  });
+  app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
 
