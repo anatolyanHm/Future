@@ -34,35 +34,35 @@ export class AuthService {
     }
   }
 
-  async signInWithEmail(
-    email: string,
-    password: string,
-  ): Promise<{ uid: string; token: string }> {
-    try {
-      const auth = getAuth();
+  // async signInWithEmail(
+  //   email: string,
+  //   password: string,
+  // ): Promise<{ uid: string; token: string }> {
+  //   try {
+  //     const auth = getAuth();
 
-      const userCredential = await signInWithEmailAndPassword(
-        this.firebaseApp.getAuth(),
-        email,
-        password,
-      );
+  //     const userCredential = await signInWithEmailAndPassword(
+  //       this.firebaseApp.getAuth(),
+  //       email,
+  //       password,
+  //     );
 
-      const user = userCredential.user;
-      const tokenId = await user.getIdToken();
+  //     const user = userCredential.user;
+  //     const tokenId = await user.getIdToken();
 
-      if (!user) throw new UnauthorizedException('Invalid credentials');
+  //     if (!user) throw new UnauthorizedException('Invalid credentials');
 
-      // const token = await this.userFirebaseService.auth.createCustomToken(
-      //   user.uid,
-      // );
+  //     // const token = await this.userFirebaseService.auth.createCustomToken(
+  //     //   user.uid,
+  //     // );
 
-      return {
-        uid: user.uid,
-        token: tokenId,
-      };
-    } catch (error) {
-      console.log(error.message);
-      throw new UnauthorizedException(error.message);
-    }
-  }
+  //     return {
+  //       uid: user.uid,
+  //       token: tokenId,
+  //     };
+  //   } catch (error) {
+  //     console.log(error.message);
+  //     throw new UnauthorizedException(error.message);
+  //   }
+  // }
 }
