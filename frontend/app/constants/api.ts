@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'https://future-ai-be.vercel.app/api';
+export const API_BASE_URL = 'https://future-ai-be-main.vercel.app/api';
 
 export const AUTH_ENDPOINTS = {
   SIGN_UP: `${API_BASE_URL}/auth/sign-up`,
